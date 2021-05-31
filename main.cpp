@@ -18,13 +18,22 @@ int main() {
     string student_number;
     string binary_equivalent;
 
-    board new_board;
 
     in_file >> board_size >> players >> student_number >> binary_equivalent;
 
-    new_board.create_board(board_size, binary_equivalent);
+    board new_board(board_size, binary_equivalent);
 
-    
+    for (int i = 0; i < new_board.get_num_snakes()+new_board.get_num_ladders(); ++i) {
+        char s_or_l;
+        int start_pos, length;
+        char hyphen = '-';
+        in_file >> s_or_l >> start_pos >> hyphen >> length;
+
+        if (s_or_l == 'S')
+        {
+            new_board.add_snake(start_pos, length);
+        }
+    }
 
     return 0;
 }
