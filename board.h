@@ -12,7 +12,6 @@ class board
 {
 public:
     board();
-    board(int size, int snakes, int ladders);
     board(int size, string binary_equivalent);
     int get_board_size();
     void set_board_size(int size);
@@ -21,14 +20,20 @@ public:
     int get_num_ladders();
     void set_num_ladders(int ladders);
 
+    int check_position(int position);
+
 
     void add_snake(int position, int length);
+
+    void add_ladder(int position, int length);
 
 private:
     int board_size;
     int num_snakes;
     int num_ladders;
     vector <int> positions;
+
+
 };
 
 

@@ -72,3 +72,15 @@ void board::add_snake(int position, int length)
     board::positions[position] = -length;
 }
 
+void board::add_ladder(int position, int length)
+{
+    board::positions[position] = length;
+}
+
+int board::check_position(int position)
+{
+    int new_pos;
+    new_pos = board::positions[position];
+    return new_pos ; // 0 is returned then the play has not reached a snake or ladder
+}
+
