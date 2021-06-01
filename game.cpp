@@ -4,11 +4,11 @@
 
 #include <cstdlib>
 #include <ctime>
+#include <iostream>
 #include "game.h"
 
 game::game()
 {
-    srand (time(0));
     game::players = {};
     game::round = 0;
     game::game_won = false;
@@ -17,7 +17,6 @@ game::game()
 
 game::game(int num_players, int board_size)
 {
-    srand (time(0));
     for (int i = 0; i < num_players; ++i) {
         game::players.push_back(0);
     }
@@ -29,7 +28,9 @@ game::game(int num_players, int board_size)
 
 void game::take_turn(int player)
 {
+    //srand(time(NULL));
     game::current_roll = rand() % 6 + 1;
+    cout << game::current_roll << " " << endl;
     change_player_pos(player, game::current_roll, game::board_size);
 }
 
