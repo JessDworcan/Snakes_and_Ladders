@@ -32,8 +32,9 @@ int game::roll_die()
 
 void game::change_player_pos(int player, int moves, int size)
 {
+    int current = game::players[player];
     //only move a player if the moves falls on or below the final board position i.e the board size
-    if( (game::players[player] += moves) <= size)
+    if( ( current += moves) <= size)
     {
         game::players[player] += moves;
         if (game::players[player] == size)
