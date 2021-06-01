@@ -3,7 +3,6 @@
 //
 
 #include <vector>
-#include "board.h"
 
 #ifndef SNAKES_AND_LADDERS_GAME_H
 #define SNAKES_AND_LADDERS_GAME_H
@@ -35,7 +34,6 @@ private:
     int game_won;
     int current_roll;
     int board_size;
-    board new_board;
 };
 
 
