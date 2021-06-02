@@ -84,3 +84,4 @@ int board::check_position(int position)
     return new_pos ; // 0 is returned then the play has not reached a snake or ladder
 }
 
+

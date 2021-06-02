@@ -27,6 +27,7 @@ public:
 
     void add_ladder(int position, int length);
 
+
 private:
     int board_size;
     int num_snakes;

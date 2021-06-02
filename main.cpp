@@ -28,6 +28,7 @@ int main() {
         in_file >> board_size >> players >> student_number >> binary_equivalent;
 
         board new_board(board_size, binary_equivalent);
+
         char s_or_l;
         int start_pos, length;
         char hyphen;
