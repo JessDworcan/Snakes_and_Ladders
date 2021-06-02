@@ -30,7 +30,6 @@ void game::take_turn(int player)
 {
     //srand(time(NULL));
     game::current_roll = rand() % 6 + 1;
-    cout << game::current_roll << " " << endl;
     change_player_pos(player, game::current_roll, game::board_size);
 }
 
@@ -75,9 +74,19 @@ void game::inc_round()
 
 int game::get_winner() {
     for (int i = 0; i < game::players.size(); ++i) {
-        if (game::players[i]==100)
+        if (game::players[i]==game::board_size)
         {
             return i;
+        }
+    }
+    int first_place;
+    int highest=0;
+    //loop to determine which player is coming first place when round 100 is reached
+    for (int i = 0; i < game::players.size(); ++i) {
+        if(game::players[i]>highest)
+        {
+            first_place = i;
+            highest = game::players[i];
         }
     }
     return -1;
